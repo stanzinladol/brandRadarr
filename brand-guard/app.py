@@ -1,6 +1,6 @@
 """BrandGuard - Digital Risk Protection (Social & App Monitoring). Run: python app.py  -> http://localhost:8000"""
 import json, os, sys, time
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
 from urllib.parse import urlparse, parse_qs
 import storage, connectors, detection, brand_profile
 
@@ -80,4 +80,4 @@ if __name__ == '__main__':
     storage.init()
     port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
     print(f'BrandGuard running at http://localhost:{port}')
-    ThreadingHTTPServer(('127.0.0.1', port), Handler).serve_forever()
+    
